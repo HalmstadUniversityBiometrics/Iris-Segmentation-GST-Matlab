@@ -13,36 +13,36 @@ The software accepts an iris image as input, and outputs segmentation informatio
 
 **The GST code consist of the following steps (some can be deactivated or customized, please read the documentation included with the code):**
 
-  1) Image downsampling for speed purposes. This will not jeopardize accuracy, since the detected iris circles are later fitted to the irregular iris contours, so any loss of resolution in iris circles detection due to downsampling is compensated.
+  1) Image **downsampling** for speed purposes. This will not jeopardize accuracy, since the detected iris circles are later fitted to the irregular iris contours, so any loss of resolution in iris circles detection due to downsampling is compensated.
 
-  2) Contrast normalization based on imadjust (Matlab function). This increases the image contrast, spreading grey values fully in the 0-255 range.
+  2) **Contrast normalization** based on imadjust (Matlab function). This increases the image contrast, spreading grey values fully in the 0-255 range.
 
-  3) Specular reflection removal based on the method published in reference 3.
+  3) **Specular reflection removal** based on the method published in reference 3.
 
-  4) Computation of the image frequency based on the method published in reference 2. This helps to customize inner parameters of steps 5-8 to the input image.
+  4) Computation of the **image frequency** based on the method published in reference 2. This helps to customize inner parameters of steps 5-8 to the input image.
 
-  5) Adaptive eyelash removal using the image frequency, as indicated in reference 2. The method is based on p-rank filters as published in reference 4. Eyelashes are removed since they create strong vertical edges that may mislead the filters used for eye center estimation and iris segmentation in steps 7 and 9.
+  5) **Adaptive eyelash removal** using the image frequency, as indicated in reference 2. The method is based on p-rank filters as published in reference 4. Eyelashes are removed since they create strong vertical edges that may mislead the filters used for eye center estimation and iris segmentation in steps 7 and 9.
 
-  6) Adaptive edge map computation using the image frequency, as indicated in reference 2. Edge map is the basis for eye center estimation and iris boundaries detection, see references [1, 2] for further details.
+  6) **Adaptive edge map computation** using the image frequency, as indicated in reference 2. Edge map is the basis for eye center estimation and iris boundaries detection, see references [1, 2] for further details.
 
-  7) Estimation of the eye center based on the method published in reference 2 using circular symmetry filters. The estimated center is used to mask candidate regions for the centers of iris circles, helping to improve detection accuracy in step 9.
+  7) **Estimation of the eye center** based on the method published in reference 2 using circular symmetry filters. The estimated center is used to mask candidate regions for the centers of iris circles, helping to improve detection accuracy in step 9.
 
-  8) Detection of eyelids based on linear symmetry detection of horizontal edges (unpublished and unoptimized, only return a straight line). The detected eyelids are used to mask candidate regions for the centers of iris circles too, helping to improve detection accuracy in step 9.
+  8) **Detection of eyelids** based on linear symmetry detection of horizontal edges (unpublished and unoptimized, only return a straight line). The detected eyelids are used to mask candidate regions for the centers of iris circles too, helping to improve detection accuracy in step 9.
 
-  9) Detection of iris boundaries based on the method published in reference 1 using the Generalized Structure Tensor (GST). In NIR images, the inner (pupil) circle is detected first, while in VW images, the outer (sclera) filter is detected first. This is because in NIR images, pupil-to-iris transition is sharper than iris-to-sclera transition, thus more reliable to detect in the first place. The opposite happens with VW images.
+  9) **Detection of iris boundaries** based on the method published in reference 1 using the Generalized Structure Tensor (GST). In NIR images, the inner (pupil) circle is detected first, while in VW images, the outer (sclera) filter is detected first. This is because in NIR images, pupil-to-iris transition is sharper than iris-to-sclera transition, thus more reliable to detect in the first place. The opposite happens with VW images.
 
-  10) Irregular contour fitting based on active contours as published in reference reference 5.
+  10) **Irregular contour fitting** based on active contours as published in reference reference 5.
 
 ---
 
 **The code outputs the following information of the input iris image:**
 
-  - Segmentation circles of the iris region (inner and outer circle) as well as eyelids (in the form of a straight line)
-  - Irregular (non-circular) iris boundaries fitted by active contours
-  - Estimated eye center (computed at the beginning and used to assist in the segmentation)
-  - Intermediate images after contrast normalization, specular reflection removal, and eyelash removal
-  - Complex edge map of the input image
-  - Binary segmentation mask
+  - **Segmentation circles** of the iris region (inner and outer circle) as well as eyelids (in the form of a straight line)
+  - Irregular (non-circular) **iris boundaries** fitted by active contours
+  - Estimated **eye center** (computed at the beginning and used to assist in the segmentation)
+  - **Intermediate images** after contrast normalization, specular reflection removal, and eyelash removal
+  - **Complex edge map** of the input image
+  - **Binary segmentation mask**
 
 # Requirements
   - Matlab software
@@ -59,10 +59,10 @@ The software accepts an iris image as input, and outputs segmentation informatio
 **You may are also interested in our [database of iris segmentation groundtruth](http://wiki.hh.se/caisr/index.php/Iris_Segmentation_Groundtruth).**
   
 # References
-  1) F. Alonso-Fernandez, J. Bigun, “Iris Boundaries Segmentation Using the Generalized Structure Tensor. A Study on the Effects on Image Degradation”, Proc. Intl Conf on Biometrics: Theory, Apps and Systems, BTAS, Washington DC, September 23-26, 2012 (link to the publication)
-  2) F. Alonso-Fernandez, J. Bigun, “Near-infrared and visible-light periocular recognition with Gabor features using frequency-adaptive automatic eye detection”, IET Biometrics, Volume 4, Issue 2, pp. 74-89, June 2015 (link to the publication in IET Biometrics)
+  1) F. Alonso-Fernandez, J. Bigun, “Iris Boundaries Segmentation Using the Generalized Structure Tensor. A Study on the Effects on Image Degradation”, Proc. Intl Conf on Biometrics: Theory, Apps and Systems, BTAS, Washington DC, September 23-26, 2012 [link to the publication](http://hh.diva-portal.org/smash/record.jsf?searchId=2&pid=diva2:545745)
+  2) F. Alonso-Fernandez, J. Bigun, “Near-infrared and visible-light periocular recognition with Gabor features using frequency-adaptive automatic eye detection”, IET Biometrics, Volume 4, Issue 2, pp. 74-89, June 2015 [link to the publication](http://digital-library.theiet.org/content/journals/10.1049/iet-bmt.2014.0038)
   3) C. Rathgeb, A. Uhl, P. Wild, "Iris Biometrics. From Segmentation to Template Security", Springer, 2013
-  4) Z. He, T. Tan, Z. Sun, X. Qiu, "Toward accurate and fast iris segmentation for iris biometrics", IEEE Transactions on Pattern Analysis and Machine Intelligence, 2010, 31, (9), pp. 1295–1307 (link to the publication in IEEE Xplore)
-  5) J. Daugman, "New methods in iris recognition", IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics, 37(5), 2007 (link to the publication in IEEE Xplore) (link to the publication in the author´s web site)
+  4) Z. He, T. Tan, Z. Sun, X. Qiu, "Toward accurate and fast iris segmentation for iris biometrics", IEEE Transactions on Pattern Analysis and Machine Intelligence, 2010, 31, (9), pp. 1295–1307 [link to the publication](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4586378&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4586378)
+  5) J. Daugman, "New methods in iris recognition", IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics, 37(5), 2007 [link to the publication](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4305270&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4305270)
   
 

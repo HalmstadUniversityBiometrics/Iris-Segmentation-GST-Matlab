@@ -9,6 +9,8 @@ The theory behind this method is further extended in the paper **[Near-infrared 
 
 The software accepts an iris image as input, and outputs segmentation information of the input iris image (see below for more information). It is capable of handling images acquired both in near-infrared (NIR) and visible (VW) spectrum.
 
+![Gst_iris_image_header](https://user-images.githubusercontent.com/6042693/106274154-17ad8000-6234-11eb-9625-04685b1e8ae4.png)
+
 ---
 
 **The GST code consist of the following steps (some can be deactivated or customized, please read the documentation included with the code):**
@@ -35,6 +37,10 @@ The software accepts an iris image as input, and outputs segmentation informatio
 
 ---
 
+![800px-Gst_iris_image_prepro](https://user-images.githubusercontent.com/6042693/106274160-1b410700-6234-11eb-81e8-ec5ff74c5463.png)
+
+---
+
 **The code outputs the following information of the input iris image:**
 
   - **Segmentation circles** of the iris region (inner and outer circle) as well as eyelids (in the form of a straight line)
@@ -43,6 +49,12 @@ The software accepts an iris image as input, and outputs segmentation informatio
   - **Intermediate images** after contrast normalization, specular reflection removal, and eyelash removal
   - **Complex edge map** of the input image
   - **Binary segmentation mask**
+
+---
+
+![800px-Gst_iris_image_segment](https://user-images.githubusercontent.com/6042693/106274167-1f6d2480-6234-11eb-9e73-b3208011d31d.png)
+
+---
 
 # Requirements
   - Matlab software

@@ -59,7 +59,7 @@ The software accepts an iris image as input, and outputs segmentation informatio
 # Requirements
   - Matlab software
   
-# Terms and Conditions
+# Terms and Conditions / Download
   - This code is provided "as is", without any warranty, and for research purposes only.
   - The code is provided in the form of executables compiled with Matlab (mcc command) under Windows. It accepts as input grayscale and RGB images in any format supported by Matlab "imread" (uint8 only).
   - Certain parameters of the code are customizable, please read the documentation included with the code for more information.

@@ -54,7 +54,7 @@ The software accepts an iris image as input, and outputs segmentation informatio
   - Please remember to cite references [1] and [2] (below) if you make use of this code in any publication.
   - By downloading the code, you agree with the terms and conditions indicated above.
   - Download the code (compiler: Matlab r2009b 32 bits (mcc command) under Windows 8.1) [here](http://wiki.hh.se/caisr/index.php/File:Release_GST_segmentation_-_winx86_-r2009b.zip) (latest release: September 2015).
-  - Download the code (compiler: Matlab r2018b 64 bits (mcc command) under Windows 10) [here](http://wiki.hh.se/caisr/index.php/File:Release_GST_segmentation_-_winx64_-r2018b.zip).
+  - Download the code (compiler: Matlab r2018b 64 bits (mcc command) under Windows 10) [here](http://wiki.hh.se/caisr/index.php/File:Release_GST_segmentation_-_winx64_-r2018b.zip) (latest release: October 2019).
 
 **You may are also interested in our [database of iris segmentation groundtruth](http://wiki.hh.se/caisr/index.php/Iris_Segmentation_Groundtruth).**
   
@@ -65,27 +65,4 @@ The software accepts an iris image as input, and outputs segmentation informatio
   4) Z. He, T. Tan, Z. Sun, X. Qiu, "Toward accurate and fast iris segmentation for iris biometrics", IEEE Transactions on Pattern Analysis and Machine Intelligence, 2010, 31, (9), pp. 1295–1307 (link to the publication in IEEE Xplore)
   5) J. Daugman, "New methods in iris recognition", IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics, 37(5), 2007 (link to the publication in IEEE Xplore) (link to the publication in the author´s web site)
   
----
-
-![squeezefaceposenet_networks_evaluated](https://user-images.githubusercontent.com/6042693/106066359-fb5af780-60fc-11eb-84c4-395cb895f25e.png)
-
----
-
-![squeezefaceposenet_evaluation_protocols](https://user-images.githubusercontent.com/6042693/106066493-30674a00-60fd-11eb-80da-7609b05595eb.png)
-
----
-
-![squeezefaceposenet_verification_results_vgg](https://user-images.githubusercontent.com/6042693/106066145-a0290500-60fc-11eb-95e8-86af004dec78.png)
-
----
-
-# Requirements
-  - Matlab software (tested in r2019b and r2020b)
-
-# Usage
-  - See usage.m file
-
-# Pre-processing
-  - Input images must be of 113 x 113. We follow the tight crop of VGGFace2, with an extra 30% increase of the face bounding box, so some contextual information is added aound the face. See attached examples and the figures above to see how the input images should look like. 
-  - The network is trained with images with some random displacement in horizontal and vertical dimensions, so it should be somehow tolerant to non-centered faces, althought it has not been tested (during testing, we only employ the center crop of the bounding box given by the MTCNN detector) See the paper for more details.
 

@@ -73,6 +73,9 @@ There are two releases. The code is the same, the only difference is the softwar
  - **Release 2:** Compiler: Matlab r2018b 64 bits (mcc command) under Windows 10 (latest release: October 2019). Note that there are two files that you need to download in order to decompress the code properly.
 
 **You may are also interested in our [database of iris segmentation groundtruth](http://wiki.hh.se/caisr/index.php/Iris_Segmentation_Groundtruth).**
+# People & Contact
+  - [Fernando Alonso-Fernandez](http://wiki.hh.se/caisr/index.php/Fernando_Alonso-Fernandez)  (contact person).
+  - [Josef Bigun](http://wiki.hh.se/caisr/index.php/Josef_Bigun)
   
 # References
   1) F. Alonso-Fernandez, J. Bigun, “Iris Boundaries Segmentation Using the Generalized Structure Tensor. A Study on the Effects on Image Degradation”, Proc. Intl Conf on Biometrics: Theory, Apps and Systems, BTAS, Washington DC, September 23-26, 2012 [link to the publication](http://hh.diva-portal.org/smash/record.jsf?searchId=2&pid=diva2:545745)

@@ -72,7 +72,11 @@ There are two releases. The code is the same, the only difference is the softwar
  - **Release 1:** Compiler: Matlab r2009b 32 bits (mcc command) under Windows 8.1 (latest release: September 2015).
  - **Release 2:** Compiler: Matlab r2018b 64 bits (mcc command) under Windows 10 (latest release: October 2019). Note that there are two files that you need to download in order to decompress the code properly.
 
-**You may are also interested in our [database of iris segmentation groundtruth](http://wiki.hh.se/caisr/index.php/Iris_Segmentation_Groundtruth).**
+# Iris Segmentation Groundtruth Database
+
+You may are also interested in our [database of iris segmentation groundtruth](https://github.com/HalmstadUniversityBiometrics/Iris-Segmentation-Groundtruth-Database).
+
+
 # People & Contact
   - [Fernando Alonso-Fernandez](http://wiki.hh.se/caisr/index.php/Fernando_Alonso-Fernandez)  (contact person).
   - [Josef Bigun](http://wiki.hh.se/caisr/index.php/Josef_Bigun)

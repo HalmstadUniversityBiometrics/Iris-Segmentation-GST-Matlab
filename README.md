@@ -1,3 +1,4 @@
+
 # Iris Segmentation Code Based on the Generalized Structure Tensor (GST)
 
 
@@ -57,16 +58,19 @@ The software accepts an iris image as input, and outputs segmentation informatio
 ---
 
 # Requirements
-  - Matlab software
+  - Matlab software running under Windows (the current release is compiled in Windows)
   
-# Terms and Conditions / Details of the Download Files
+# Description of Release Files
   - This code is provided "as is", without any warranty, and for research purposes only.
   - The code is provided in the form of executables compiled with Matlab (mcc command) under Windows. It accepts as input grayscale and RGB images in any format supported by Matlab "imread" (uint8 only).
   - Certain parameters of the code are customizable, please read the documentation included with the code for more information.
   - Please remember to cite references [1] and [2] (below) if you make use of this code in any publication.
   - By downloading the code, you agree with the terms and conditions indicated above.
-  - Download the code (compiler: Matlab r2009b 32 bits (mcc command) under Windows 8.1) [here](http://wiki.hh.se/caisr/index.php/File:Release_GST_segmentation_-_winx86_-r2009b.zip) (latest release: September 2015).
-  - Download the code (compiler: Matlab r2018b 64 bits (mcc command) under Windows 10) [here](http://wiki.hh.se/caisr/index.php/File:Release_GST_segmentation_-_winx64_-r2018b.zip) (latest release: October 2019).
+
+There are two releases. The code is the same, the only difference is the software used to compile it:
+
+ - **Release 1:** Compiler: Matlab r2009b 32 bits (mcc command) under Windows 8.1 (latest release: September 2015).
+ - **Release 2:** Compiler: Matlab r2018b 64 bits (mcc command) under Windows 10 (latest release: October 2019). Note that there are two files that you need to download in order to decompress the code properly.
 
 **You may are also interested in our [database of iris segmentation groundtruth](http://wiki.hh.se/caisr/index.php/Iris_Segmentation_Groundtruth).**
   
